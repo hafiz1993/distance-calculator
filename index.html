@@ -62,10 +62,10 @@
         const addKm = document.getElementById("kmInput").value;
         const kmNumber = parseFloat(addKm);
         if (kmNumber <= 0) {
-          alert("invalid");
+          alert("Invalid");
           document.getElementById("kmInput").value = "";
-          document.getElementById("fitOutput").value = "";
-          document.getElementById("meterOutput").value = "";
+          document.getElementById("fitOutput").value = "hidden";
+          document.getElementById("meterOutput").value = "hidden";
         } else {
           const totalMeter = kmNumber * 1000;
           const meterOutput = document.getElementById("meterOutput");
