@@ -61,14 +61,20 @@
       currentBtn.addEventListener("click", function () {
         const addKm = document.getElementById("kmInput").value;
         const kmNumber = parseFloat(addKm);
-        const totalMeter = kmNumber * 1000;
-        const meterOutput = document.getElementById("meterOutput");
-        meterOutput.innerText = totalMeter;
+        if (kmNumber <= 0) {
+          alert("invalid");
+          document.getElementById("kmInput").value = "";
+        } else {
+          const totalMeter = kmNumber * 1000;
+          const meterOutput = document.getElementById("meterOutput");
+          meterOutput.innerText = totalMeter;
 
-        const totalFit = kmNumber * 3280.84;
-        const fitOutput = document.getElementById("fitOutput");
-        fitOutput.innerText = totalFit;
-        console.log(totalMeter);
+          const totalFit = kmNumber * 3280.84;
+          const fitOutput = document.getElementById("fitOutput");
+          fitOutput.innerText = totalFit;
+          console.log(totalMeter);
+          document.getElementById("kmInput").value = "";
+        }
       });
     </script>
   </body>
