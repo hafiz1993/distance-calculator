@@ -64,6 +64,8 @@
         if (kmNumber <= 0) {
           alert("invalid");
           document.getElementById("kmInput").value = "";
+          document.getElementById("fitOutput").value = "";
+          document.getElementById("meterOutput").value = "";
         } else {
           const totalMeter = kmNumber * 1000;
           const meterOutput = document.getElementById("meterOutput");
