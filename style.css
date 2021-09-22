@@ -1,0 +1,12 @@
+body {
+  padding: 100px;
+  color: white;
+  background-image: radial-gradient(
+    circle,
+    #f66969,
+    #f35e5d,
+    #ef5251,
+    #eb4645,
+    #e73939
+  );
+}

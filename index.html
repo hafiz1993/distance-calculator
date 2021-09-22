@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Distance Converter</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="display-4 text-center mb-3">Distance Converter</h1>
+          <form>
+            <div class="form-group">
+              <input
+                id="kmInput"
+                type="number"
+                placeholder="Enter Kilometer....."
+                class="form-control form-control-lg"
+              />
+              <br />
+              <br />
+              <button
+                id="submitKm"
+                type="button"
+                class="btn btn-success btn-lg"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+          <div id="output">
+            <div class="card text-white bg-primary mb-3">
+              <div class="card-block">
+                <h4>Meter:</h4>
+                <div id="meterOutput"></div>
+              </div>
+            </div>
+            <div class="card text-white bg-success mb-3">
+              <div class="card-block">
+                <h4>Fit:</h4>
+                <div id="fitOutput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const currentBtn = document.getElementById("submitKm");
+
+      currentBtn.addEventListener("click", function () {
+        const addKm = document.getElementById("kmInput").value;
+        const kmNumber = parseFloat(addKm);
+        const totalMeter = kmNumber * 1000;
+        const meterOutput = document.getElementById("meterOutput");
+        meterOutput.innerText = totalMeter;
+
+        const totalFit = kmNumber * 3280.84;
+        const fitOutput = document.getElementById("fitOutput");
+        fitOutput.innerText = totalFit;
+        console.log(totalMeter);
+      });
+    </script>
+  </body>
+</html>
